@@ -1,4 +1,26 @@
-﻿// See https://aka.ms/new-console-template for more information
-using EvaluationSampleCode;
+﻿using System;
 
-Console.WriteLine("Hello, World!");
+namespace EvaluationSampleCode
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //test pour GetStrongFormat --
+
+            var helper = new HtmlFormatHelper();
+            var content = "Hello";
+
+            var result = helper.GetStrongFormat(content);
+
+            if (result == "<strong>Hello</strong>")
+            {
+                Console.WriteLine("Test Passed");
+            }
+            else
+            {
+                Console.WriteLine($"Test Failed: Expected '<strong>Hello</strong>' but got '{result}'");
+            }
+        }
+    }
+}
