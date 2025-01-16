@@ -29,9 +29,10 @@ namespace EvaluationSampleCode
         public void GetRightListFormatted_ShouldWrapContentInListTags()
         {
             var helper = new HtmlFormatHelper();
-            var content = "Hello";
-            var result = helper.GetFormattedListElements(content);
-
+            var contents = new List<string> { "Item1", "Item2", "Item3" };
+            var result = helper.GetFormattedListElements(contents);
+            var expected = "<ul><li>Item1</li><li>Item2</li><li>Item3</li></ul>";
+            Console.WriteLine(result == expected ? "Test Passed" : "Test Failed");
         }
     }
 }
